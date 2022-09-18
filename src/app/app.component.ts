@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from './models/product.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'compra';
+  imgParent = '';
+  public showImg = true;
+
+  public onLoaded(img :string){
+    console.log('log padre', img);
+  }
+
+  public toggleImg(){
+     this.showImg = !this.showImg;
+  }
 }

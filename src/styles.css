@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@import url(./styles/reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+/* @import 'swiper/less'; */
+/* @import 'swiper/less/navigation';
+@import 'swiper/less/pagination'; */
+
+*{
+  font-family: 'Quicksand',sans-serif;
+}
+
+.container-products app-img img{
+    border-radius: 10px;
+}
