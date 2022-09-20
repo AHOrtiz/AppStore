@@ -18,6 +18,9 @@ export class ProductsComponent implements OnInit {
   products:Product[]=[];
   showProductDetail = false;
   productChosen !: Product;
+
+  limit = 10;
+  offset = 0;
   // today = new Date();
   // date = new Date (2021,1,21);
 
@@ -26,11 +29,7 @@ export class ProductsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.productService.getAllProducts()
-      .subscribe(data=>{
-        console.log(data);
-        this.products= data;
-      })
+      this.loadMore()
   }
   public onAddToShoppingCart(product:Product){
      this.store.addProduct(product);
@@ -71,15 +70,29 @@ export class ProductsComponent implements OnInit {
     const id = this.productChosen.id;
     this.productService.updateProduct(id,changes)
     .subscribe(data=>{
-      console.log('Modificated',data)
+       const productIndexw  = this.products.findIndex(item => item.id === this.productChosen.id);
+       this.products[productIndexw]= data;
+       this.productChosen = data;
     })
   }
 
-  onSwiper([swiper]) {
-    console.log(swiper);
+  public deleteProduct(){
+    const id = this.productChosen.id;
+    this.productService.deleteProduct(id)
+     .subscribe(()=>{
+      const productIndexw  = this.products.findIndex(item => item.id === this.productChosen.id);
+      this.products.splice(productIndexw,1);
+      this.showProductDetail = false;
+     })
   }
-  onSlideChange() {
-    console.log('slide change');
-  }
+
+   public loadMore(){
+    this.productService.getProducByPage(this.limit , this.offset)
+    .subscribe(data=>{
+    this.products= this.products.concat(data);
+      this.offset += this.limit;
+    })
+   }
+
 
 }
