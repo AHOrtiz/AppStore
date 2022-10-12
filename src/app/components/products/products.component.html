@@ -2,6 +2,7 @@
 <p> Today:{{today | timeAgo}}</p> -->
 <!-- <p>Otra Fecha_ {{date | date}}</p> -->
 <button (click)="createNewProduct()">Create</button>
+ <button (click)="OnShowDetail('1212151')">Detalle not found</button>
 
 <div class="container-products">
   <app-producto [product]="product" *ngFor="let product of products" (addedProduct)="onAddToShoppingCart($event)"
@@ -11,6 +12,7 @@
 </div>
 
 <div class="product-detail" [class.active]="showProductDetail">
+  {{statusDetail}}
 
   <div *ngIf="productChosen">
     <button (click)="toggleProductDetail()">Close</button>
