@@ -24,6 +24,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RouterModule } from '@angular/router';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { RouterModule } from '@angular/router';
     TimeAgoPipe,
     HighlightDirective,
     HomeComponent,
-    CategoryComponent
+    CategoryComponent,
+    ProductDetailComponent
 
 
   ],
