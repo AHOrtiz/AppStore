@@ -10,7 +10,7 @@ import { throwError, zip } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductsService {
-  private apiUrl = `https://young-sands-07814.herokuapp.com/api`
+  private apiUrl = ` https://damp-spire-59848.herokuapp.com/api`
 
   constructor(private http:HttpClient) { }
 
