@@ -1,7 +1,14 @@
-<div *ngIf="user">
-    <h1>My profile</h1>
-    <p>Nombre: {{user.name}}</p>
-    <p>Email: {{user.email}}</p>
-    <p>Role :{{user.role}}</p>
-    <a *ngIf="user.role=== 'admin'" routerLink="/cms">ir al CMS</a>
+<div class="card">
+  <h1>My profile</h1>
+  <div *ngIf="user">
+    <img src="/assets/images/img_avatar.png" alt="Avatar" style="width:50%">
+
+    <div class="container">
+
+      <p>Nombre: {{user.name}}</p>
+      <p>Email: {{user.email}}</p>
+      <p>Role :{{user.role}}</p>
+      <a *ngIf="user.role=== 'admin'" routerLink="/cms">ir al CMS</a>
+    </div>
+  </div>
 </div>

@@ -1,8 +1,8 @@
 <!-- <p> Today:{{today | date:'short'}}</p>
 <p> Today:{{today | timeAgo}}</p> -->
 <!-- <p>Otra Fecha_ {{date | date}}</p> -->
-<button (click)="createNewProduct()">Create</button>
- <button (click)="OnShowDetail('1212151')">Detalle not found</button>
+<!-- <button (click)="createNewProduct()">Create</button>
+ <button (click)="OnShowDetail('1212151')">Detalle not found</button> -->
 
 <div class="container-products">
   <app-producto [product]="product" *ngFor="let product of products" (addedProduct)="onAddToShoppingCart($event)"

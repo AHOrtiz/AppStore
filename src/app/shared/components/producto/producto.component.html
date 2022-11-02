@@ -1,4 +1,4 @@
-<a [routerLink]="['/product',product.id]">
+<!-- <a [routerLink]="['/product',product.id]">
 
   <app-img *ngIf="product.images.length>0" [img]="product.images[0]"></app-img>
 </a>
@@ -6,7 +6,37 @@
 <p>{{product.title }}</p>
 <p>{{product?.taxes | currency:'MXN'}}</p>
 
-<!-- <p appHighlight>{{product.description}}</p> -->
-<!-- <button (click)="onShowDetail()">Ver detalle</button> -->
+
 <a routerLink="." [queryParams]="{product:product.id}">Ver detalle</a>
-<button (click)="onAddToCart()">Add cart</button>
+<button (click)="onAddToCart()" class="btnAddCart">Add cart</button> -->
+
+
+
+
+<div class="a-box">
+  <div class="img-container">
+    <div class="img-inner">
+      <div class="inner-skew">
+        <a [routerLink]="['/product',product.id]">
+          <app-img *ngIf="product.images.length>0" [img]="product.images[0]"></app-img>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="text-container">
+    <h1><strong>{{product.title }}</strong></h1>
+    <h1>{{product.price | currency:'MXN'}}</h1>
+    <!-- <p>{{product?.taxes | currency:'MXN'}}</p> -->
+
+    <div class="container-btn">
+      <button (click)="onAddToCart()" class="btnAddCart">Add cart</button>
+      <a routerLink="." [queryParams]="{product:product.id}">Ver detalle</a>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- <p appHighlight>{{product.description}}</p> -->
+  <!-- <button (click)="onShowDetail()">Ver detalle</button> -->
